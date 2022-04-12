@@ -22,7 +22,7 @@ The "spectra_from_spe" command requires only the Filepath of your SPE-File as st
 - space="tab" -> Uses Tabs as Specers between the Values in the converted TXT-File (other Option is ";")
 - header=True -> Activates the header with all the important Settings for the TXT-File
 - invert=True -> inverts the TXT-File. If true the X-Values will be left and the single Frames will be as columns, if false the Frames will be in lines
-
+All these settings are True by default.
 
 ## Extra
 In the repo you will find the "Test.py" Testfile and the "Testspectra" Folder with some Examples for Usage and Testing.
