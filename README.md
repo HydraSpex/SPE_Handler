@@ -1,6 +1,6 @@
 # SPE_Handler
 This library is for SPE-Files created by LightField 5.3 from Princeton Instruments<br>
-It is designed to work with SPE3.0-Files and requires Python 3.
+It is designed to work with SPE2.x and SPE3.0-Files and requires Python 3.
 
 ## Installation & Requirements
 Just copy the library (SPE_Handler.py) in your project folder.<br>
