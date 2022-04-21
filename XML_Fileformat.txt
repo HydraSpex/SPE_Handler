@@ -1,0 +1,376 @@
+<SpeFormat version="3.0" xmlns="http://www.princetoninstruments.com/spe/2009">
+	<DataFormat>
+		<DataBlock type="Frame" count="4096" pixelFormat="MonochromeUnsigned16" size="1024" stride="1024" calibrations="1">
+		<DataBlock type="Region" calibrations="2,3" count="1" width="512" height="1" size="1024" stride="1024" />
+		</DataBlock>
+	</DataFormat>
+	<Calibrations>
+		<WavelengthMapping id="1" date="2021-03-22T18:09:32.9719631+01:00" orientation="Normal" laserLine="532">
+			<Wavelength xml:space="preserve">534.46234975855339,534.67378816355256,534.88522539718883,535.0966614588001,535.30809634772322,535.51953006329552,535.73096260485454,535.94239397173692,536.15382416328,536.36525317882126,536.57668101769787,536.7881076792471,536.99953316280619,537.21095746771232,537.42238059330282,537.63380253891512,537.84522330388643,538.05664288755406,538.26806128925523,538.4794785083277,538.69089454410823,538.90230939593459,539.113723063144,539.325135545074,539.53654684106175,539.74795695044452,539.95936587256028,540.17077360674591,540.38218015233917,540.59358550867728,540.80498967509789,541.01639265093831,541.227794435536,541.43919502822848,541.6505944283532,541.86199263524793,542.07338964824976,542.28478546669646,542.49618008992547,542.70757351727445,542.918965748081,543.13035678168239,543.34174661741645,543.55313525462066,543.76452269263245,543.97590893079,544.18729396843025,544.398677804891,544.61006043951011,544.82144187162521,545.03282210057353,545.24420112569328,545.45557894632191,545.666955561797,545.87833097145653,546.089705174638,546.301078170679,546.51244995891727,546.723820538691,546.93518990933762,547.14655807019471,547.35792502060031,547.56929075989228,547.780655287408,547.99201860248559,548.20338070446269,548.41474159267727,548.62610126646746,548.83745972517033,549.04881696812424,549.26017299466707,549.47152780413683,549.68288139587082,549.8942337692074,550.10558492348446,550.31693485803964,550.52828357221119,550.739631065337,550.9509773367547,551.16232238580278,551.37366621181866,551.58500881414068,551.79635019210673,552.00769034505493,552.219029272323,552.43036697324908,552.64170344717161,552.853038693428,553.06437271135655,553.27570550029577,553.48703705958314,553.69836738855668,553.90969648655516,554.12102435291615,554.33235098697776,554.54367638807844,554.75500055555631,554.96632348874925,555.17764518699539,555.38896564963341,555.600284876001,555.81160286543638,556.02291961727815,556.23423513086414,556.4455494055328,556.65686244062226,556.86817423547086,557.07948478941671,557.29079410179816,557.50210217195365,557.71340899922143,557.92471458293949,558.1360189224464,558.34732201708061,558.55862386618037,558.76992446908378,558.9812238251294,559.19252193365583,559.40381879400093,559.61511440550362,559.826408767502,560.03770187933458,560.24899374033987,560.46028434985612,560.67157370722191,560.8828618117758,561.0941486628559,561.305434259801,561.51671860194972,561.72800168864,561.93928351921113,562.15056409300121,562.36184340934858,562.57312146759227,562.78439826707029,562.99567380712176,563.20694808708492,563.41822110629869,563.62949286410117,563.84076335983139,564.0520325928278,564.26330056242921,564.47456726797429,564.68583270880151,564.89709688424932,565.108359793657,565.319621436363,565.53088181170574,565.74214091902445,565.95339875765762,566.1646553269436,566.375910626222,566.58716465483076,566.79841741210919,567.00966889739584,567.22091911002951,567.432168049349,567.64341571469356,567.8546621054013,568.06590722081171,568.27715106026324,568.48839362309479,568.69963490864541,568.91087491625422,569.12211364525956,569.33335109500069,569.54458726481664,569.755822154046,569.96705576202771,570.17828808810123,570.3895191316052,570.60074889187877,570.81197736826061,571.02320456009,571.23443046670593,571.44565508744734,571.65687842165323,571.86810046866287,572.07932122781506,572.29054069844915,572.5017588799044,572.71297577151915,572.92419137263312,573.13540568258554,573.34661870071511,573.55783042636131,573.769040858863,573.98024999755978,574.19145784179045,574.40266439089419,574.61386964421069,574.82507360107854,575.03627626083744,575.24747762282652,575.45867768638482,575.66987645085192,575.88107391556673,576.092270079869,576.303464943098,576.51465850459238,576.725850763692,576.9370417197365,577.14823137206463,577.359419720016,577.57060676293008,577.78179250014625,577.99297693100368,578.20416005484174,578.41534187100035,578.62652237881844,578.8377015776357,579.04887946679139,579.26005604562533,579.47123131347666,579.68240526968509,579.89357791359,580.104749244531,580.31591926184751,580.52708796487946,580.73825535296578,580.94942142544642,581.16058618166085,581.37174962094878,581.58291174264969,581.79407254610328,582.00523203064938,582.21639019562713,582.42754704037668,582.63870256423718,582.84985676654878,583.061009646651,583.27216120388346,583.48331143758594,583.69446034709824,583.90560793176007,584.11675419091091,584.32789912389092,584.5390427300398,584.75018500869726,584.9613259592029,585.1724655808971,585.383603873119,585.59474083520877,585.80587646650622,586.01701076635152,586.228143734084,586.439275369044,586.65040567057088,586.86153463800542,587.07266227068658,587.28378856795473,587.49491352915,587.70603715361233,587.91715944068142,588.12828038969735,588.33940000000018,588.55051827093,588.76163520182661,588.97275079203007,589.18386504088073,589.3949779477183,589.606089511883,589.81719973271515,590.02830860955441,590.23941614174123,590.45052232861553,590.6616271695176,590.87273066378748,591.08383281076544,591.29493360979154,591.50603306020582,591.717131161349,591.92822791256094,592.13932331318165,592.35041736255175,592.5615100600113,592.77260140490068,592.98369139656006,593.19478003432994,593.40586731755059,593.61695324556172,593.82803781770451,594.03912103331891,594.250202891745,594.46128339232371,594.67236253439489,594.88344031729923,595.09451674037746,595.30559180296927,595.51666550441564,595.72773784405672,595.93880882123312,596.14987843528513,596.36094668555336,596.57201357137853,596.78307909210082,596.99414324706083,597.20520603559908,597.41626745705616,597.6273275107726,597.838386196089,598.0494435123461,598.26049945888417,598.471554035044,598.68260724016613,598.89365907359161,599.1047095346604,599.31575862271359,599.52680633709178,599.737852677136,599.94889764218613,600.1599412315835,600.37098344466892,600.58202428078266,600.7930637392659,601.00410181945915,601.21513852070336,601.42617384233915,601.63720778370759,601.84824034414908,602.059271523005,602.27030131961567,602.48132973332224,602.69235676346545,602.90338240938661,603.114406670426,603.32542954592486,603.5364510352241,603.74747113766455,603.958489852587,604.1695071793331,604.38052311724311,604.59153766565839,604.80255082391966,605.01356259136855,605.22457296734524,605.43558195119147,605.64658954224808,605.85759573985581,606.06860054335618,606.27960395209016,606.49060596539869,606.7016065826233,606.91260580310473,607.12360362618438,607.33460005120332,607.54559507750253,607.75658870442362,607.96758093130734,608.17857175749543,608.38956118232875,608.60054920514847,608.811535825296,609.02252104211277,609.23350485494007,609.44448726311873,609.65546826599052,609.86644786289685,610.07742605317867,610.28840283617751,610.49937821123467,610.7103521776919,610.92132473488994,611.13229588217075,611.34326561887553,611.5542339443457,611.765200857923,611.97616635894826,612.18713044676372,612.3980931207102,612.60905438012981,612.8200142243636,613.03097265275312,613.24192966464045,613.45288525936644,613.663839436273,613.87479219470185,614.08574353399433,614.29669345349214,614.50764195253714,614.71858903047053,614.92953468663438,615.14047892037024,615.35142173101963,615.56236311792429,615.773303080426,615.9842416178667,616.19517872958761,616.40611441493115,616.61704867323851,616.82798150385156,617.03891290611239,617.24984287936252,617.46077142294394,617.67169853619851,617.882624218468,618.09354846909412,618.304471287419,618.5153926727844,618.7263126245324,618.93723114200463,619.14814822454332,619.35906387149009,619.56997808218728,619.78089085597639,619.99180219219988,620.20271209019973,620.41362054931756,620.62452756889559,620.83543314827614,621.04633728680085,621.25723998381193,621.46814123865192,621.67904105066236,621.88993941918511,622.10083634356317,622.31173182313808,622.52262585725214,622.73351844524768,622.94440958646669,623.15529928025137,623.366187525944,623.57707432288692,623.78795967042208,623.99884356789232,624.209726014639,624.42060701000526,624.63148655333293,624.8423646439644,625.05324128124232,625.26411646450845,625.47499019310567,625.685862466376,625.896733283662,626.10760264430621,626.3184705476508,626.52933699303821,626.7402019798111,626.95106550731168,627.16192757488261,627.37278818186644,627.58364732760515,627.794505011442,628.005361232719,628.21621599077878,628.427069284964,628.63792111461726,628.84877147908117,629.05962037769814,629.27046780981107,629.48131377476216,629.69215827189453,629.90300130055084,630.11384286007319,630.32468294980481,630.53552156908813,630.746358717266,630.95719439368111,631.16802859767654,631.37886132859444,631.589692585778,631.80052236856989,632.01135067631276,632.22217750834977,632.43300286402348,632.64382674267711,632.85464914365309,633.06547006629432,633.276289509944,633.48710747394512,633.69792395764011,633.908738960372,634.11955248148433,634.33036452031934,634.5411750762205,634.7519841485306,634.96279173659264,635.17359783974962,635.38440245734489,635.59520558872111,635.80600723322152,636.01680739018911,636.22760605896724,636.4384032388989,636.649198929327,636.85999312959484,637.07078583904581,637.28157705702267,637.49236678286911,637.7031550159279,637.9139417555424,638.12472700105582,638.33551075181128,638.54629300715249,638.7570737664222,638.96785302896421,639.17863079412166,639.38940706123776,639.60018182965564,639.81095509871875,640.02172686777089,640.2324971361553,640.443265903215,640.65403316829384,640.86479893073465,641.07556318988168,641.28632594507781,641.49708719566672,641.70784694099189,641.918605180397,642.12936191322513,642.34011713882012
+			</Wavelength>
+		</WavelengthMapping>
+		<SensorInformation id="2" orientation="Normal" width="512" height="512" />
+		<SensorMapping id="3" x="0" y="242" height="30" width="512" xBinning="1" yBinning="30" />
+	</Calibrations>
+	<DataHistories>
+		<DataHistory id="1">
+			<Origin creator="Blau" created="2022-04-13T15:30:48.4579139+02:00" software="LightField" softwareVersion="5.3.1.1510" softwareCompany="Princeton Instruments">
+				<Experiment xmlns="http://www.princetoninstruments.com/experiment/2009" version="6" xmlns:r="http://www.princetoninstruments.com/experiment/restore/2009" r:version="1">
+					<System>
+						<Spectrometers count="1">
+							<Spectrometer deviceID="1" model="SP-2-500i" serialNumber="25561237" computerInterface="USB">
+								<Turrets count="1">
+									<Turret id="1">
+										<Gratings count="3">
+											<Grating id="1" type="String">500nm,1200</Grating>
+											<Grating id="2" type="String">500nm,600</Grating>
+											<Grating id="3" type="String">500nm,150</Grating>
+										</Gratings>
+									</Turret>
+								</Turrets>
+								<OpticalPorts count="2">
+									<Entrance>
+										<Side>
+											<Type id="1" type="OpticalPortType">ManualSlit</Type>
+										</Side>
+									</Entrance>
+									<Exit>
+										<Front>
+											<Type id="2" type="OpticalPortType">FocalPlane</Type>
+										</Front>
+									</Exit>
+								</OpticalPorts>
+							</Spectrometer>
+						</Spectrometers>
+						<Cameras count="1">
+							<Camera deviceID="2" model="ProEM+: 512B eXcelon" serialNumber="08022312" computerInterface="Gigabit Ethernet" demo="False" />
+						</Cameras>
+						<DeviceLinks count="1">
+							<DeviceLink firstDeviceID="1" firstDeviceLinkNode="FrontOutput" secondDeviceID="2" secondDeviceLinkNode="Input" />
+						</DeviceLinks>
+					</System>
+					<Devices>
+						<Cameras count="1">
+							<Camera deviceID="2">
+								<Sensor>
+									<Layout>
+										<ActiveArea>
+											<Width r:priority="1" type="Int32">512</Width>
+											<Height r:priority="1" type="Int32">512</Height>
+											<TopMargin type="Int32">10</TopMargin>
+											<LeftMargin type="Int32">28</LeftMargin>
+											<BottomMargin type="Int32">6</BottomMargin>
+											<RightMargin type="Int32">12</RightMargin>
+										</ActiveArea>
+										<MaskedArea>
+											<Height type="Int32">512</Height>
+											<TopMargin type="Int32">10</TopMargin>
+											<BottomMargin type="Int32">6</BottomMargin>
+										</MaskedArea>
+									</Layout>
+									<Information>
+										<SensorName r:readOnly="True" type="String">E2V 512 x 512 (CCD 97)(B)(eXcelon)</SensorName>
+										<CcdCharacteristics r:readOnly="True" type="CcdCharacteristics">BackIlluminated, ExcelonEnabled</CcdCharacteristics>
+										<Type r:readOnly="True" type="SensorType">Ccd</Type>
+										<ActiveArea>
+											<Height r:readOnly="True" type="Int32">512</Height>
+											<Width r:readOnly="True" type="Int32">512</Width>
+											<BottomMargin r:readOnly="True" type="Int32">6</BottomMargin>
+											<LeftMargin r:readOnly="True" type="Int32">28</LeftMargin>
+											<RightMargin r:readOnly="True" type="Int32">12</RightMargin>
+											<TopMargin r:readOnly="True" type="Int32">10</TopMargin>
+										</ActiveArea>
+										<MaskedArea>
+											<BottomMargin r:readOnly="True" type="Int32">6</BottomMargin>
+											<Height r:readOnly="True" type="Int32">512</Height>
+											<TopMargin r:readOnly="True" type="Int32">10</TopMargin>
+										</MaskedArea>
+										<Pixel>
+											<Width r:readOnly="True" type="Double">16</Width>
+											<Height r:readOnly="True" type="Double">16</Height>
+											<GapWidth r:readOnly="True" type="Double">0</GapWidth>
+											<GapHeight r:readOnly="True" type="Double">0</GapHeight>
+										</Pixel>
+										<Secondary>
+											<ActiveArea>
+												<Height r:readOnly="True" type="Int32">0</Height>
+											</ActiveArea>
+											<MaskedArea>
+												<Height r:readOnly="True" type="Int32">0</Height>
+											</MaskedArea>
+										</Secondary>
+									</Information>	
+									<Temperature>
+										<SetPoint type="Double">-50</SetPoint>
+										<Reading r:readOnly="True" type="Double" varied="True">-43</Reading>
+										<Status r:readOnly="True" type="SensorTemperatureStatus">Unlocked</Status>
+										<DisableCoolingFan type="Boolean">False</DisableCoolingFan>
+									</Temperature>
+									<Cleaning>
+										<FinalSectionHeight type="Int32">512</FinalSectionHeight>
+										<FinalSectionCount type="Int32">1</FinalSectionCount>
+										<CleanSerialRegister relevance="False" type="Boolean">True</CleanSerialRegister>
+										<CleanUntilTrigger type="Boolean">True</CleanUntilTrigger>
+										<CycleCount type="Int32">1</CycleCount>
+										<CycleHeight type="Int32">512</CycleHeight>
+										<CleanBeforeExposure relevance="False" type="Boolean">True</CleanBeforeExposure>
+									</Cleaning>
+								</Sensor>
+								<ShutterTiming>
+									<ExposureTime type="Double">100</ExposureTime>
+									<DelayResolution r:readOnly="True" type="Double">1000</DelayResolution>
+									<OpeningDelay type="Double">0</OpeningDelay>
+									<Mode type="ShutterTimingMode">AlwaysOpen</Mode>
+									<ClosingDelay type="Double">0</ClosingDelay>
+								</ShutterTiming>
+								<ReadoutControl>
+									<Mode r:priority="2" type="ReadoutControlMode">FrameTransfer</Mode>
+									<Time r:readOnly="True" type="Double">0.76139999999999985</Time>
+									<Orientation r:readOnly="True" type="ReadoutOrientation">FlippedHorizontally</Orientation>
+									<StorageShiftRate r:priority="5" type="Double">0.6</StorageShiftRate>
+									<VerticalShiftRate relevance="False" r:priority="5" type="Double">0.6</VerticalShiftRate>
+									<RegionsOfInterest>
+										<Selection r:priority="2" type="RegionsOfInterestSelection">CustomRegions</Selection>
+										<BinningProvider r:priority="2" type="FeatureProvider">Hardware</BinningProvider>
+										<CustomRegions r:priority="5" count="1" type="RegionOfInterestCollection">
+											<RegionOfInterest id="0" x="0" width="512" xBinning="1" y="242" height="30" yBinning="30" />
+										</CustomRegions>
+										<BinnedSensor>
+											<XBinning relevance="False" r:priority="3" type="Int32">1</XBinning>
+											<YBinning relevance="False" r:priority="3" type="Int32">1</YBinning>
+										</BinnedSensor>
+										<LineSensor>
+											<RowBinning relevance="False" r:priority="3" type="Int32">1</RowBinning>
+										</LineSensor>
+										<Result r:readOnly="True" type="RegionOfInterestCollection" count="1">
+											<RegionOfInterest id="0" x="0" width="512" xBinning="1" y="242" height="30" yBinning="30" />
+										</Result>
+									</RegionsOfInterest>
+									<Kinetics>
+										<WindowHeight relevance="False" r:priority="1" type="Int32">10</WindowHeight>
+									</Kinetics>
+								</ReadoutControl>
+								<HardwareIO>
+									<OutputSignal type="OutputSignal">Exposing</OutputSignal>
+									<TriggerDetermination type="TriggerDetermination">RisingEdge</TriggerDetermination>
+									<TriggerResponse type="TriggerResponse">ReadoutPerTrigger</TriggerResponse>
+									<InvertOutputSignal type="Boolean">False</InvertOutputSignal>
+								</HardwareIO>
+								<Adc>
+									<Speed type="Double">10</Speed>
+									<BitDepth r:readOnly="True" type="Int32">16</BitDepth>
+									<AnalogGain type="AdcGain">High</AnalogGain>
+									<EMGain type="Int32">1</EMGain>
+									<Quality r:priority="2" type="AdcQuality">ElectronMultiplied</Quality>
+									<CorrectPixelBias type="Boolean">True</CorrectPixelBias>
+								</Adc>
+								<Acquisition>
+									<Orientation r:readOnly="True" type="ReadoutOrientation">Normal</Orientation>
+									<NormalizeOrientation r:priority="3" type="Boolean">True</NormalizeOrientation>
+									<PixelFormat r:readOnly="True" type="PixelFormat">MonochromeUnsigned16</PixelFormat>
+									<FrameSize r:readOnly="True" type="Int32">1024</FrameSize>
+									<FrameStride r:readOnly="True" type="Int32">1024</FrameStride>
+									<FramesPerReadout r:readOnly="True" type="Int32">1</FramesPerReadout>
+									<ReadoutStride r:readOnly="True" type="Int32">1024</ReadoutStride>
+									<PixelDepth r:readOnly="True" type="Int32">16</PixelDepth>
+									<ReadoutRate r:readOnly="True" type="Double">9.9684200452965</ReadoutRate>
+									<FrameRate r:readOnly="True" type="Double">9.9684200452965</FrameRate>
+									<FrameTracking>
+										<Enabled type="Boolean">False</Enabled>
+									</FrameTracking>
+									<TimeStamping>
+										<Stamps type="TimeStamps">None</Stamps>
+									</TimeStamping>
+								</Acquisition>
+								<Experiment>
+									<Acquisition>
+										<FramesToStore type="Int64">4096</FramesToStore>
+										<FrameSize r:readOnly="True" type="Int32">1024</FrameSize>
+										<FrameStride r:readOnly="True" type="Int32">1024</FrameStride>
+										<PixelDepth r:readOnly="True" type="Int32">16</PixelDepth>
+										<PixelFormat r:readOnly="True" type="PixelDataFormat">MonochromeUnsigned16</PixelFormat>
+										<FramesToInitiallyDiscard type="Int64">0</FramesToInitiallyDiscard>
+										<EnableIntermediateFrameUpdates relevance="False" type="Boolean">False</EnableIntermediateFrameUpdates>
+										<Orientation>
+											<LightPathOrientation r:readOnly="True" type="ReadoutOrientation">Normal</LightPathOrientation>
+											<LightPathOrientationUncorrected r:readOnly="True" type="ReadoutOrientation">Normal</LightPathOrientationUncorrected>
+											<Result r:readOnly="True" type="ImageOrientation">Normal</Result>
+										</Orientation>
+										<OutputFiles>
+											<AllResults r:readOnly="True" type="OutputFileCollection">
+												<OutputFileCollection count="1">
+												<OutputFile kind="Result">D:\DATA\2022\04\13\SpectralMap_64x64_100ms  000.spe</OutputFile>
+												</OutputFileCollection>
+											</AllResults>
+										</OutputFiles>
+										<Notification xmlns="http://www.princetoninstruments.com/lightfield/experiment/2009">
+											<Enabled type="Boolean">False</Enabled>
+											<EmailAddresses relevance="False" type="String"></EmailAddresses>
+											<Frequency relevance="False" type="NotificationFrequency">CompletionOnly</Frequency>
+											<ElapsedInterval relevance="False" type="Int32">30</ElapsedInterval>
+											<AttachScreenShot relevance="False" type="Boolean">True</AttachScreenShot>
+										</Notification>
+									</Acquisition>
+									<FileNameGeneration>
+										<Directory r:priority="4" type="String">D:\DATA\2022\04\13</Directory>
+										<BaseFileName r:priority="4" type="String">SpectralMap_64x64_100ms</BaseFileName>
+										<AttachTime r:priority="4" type="Boolean">False</AttachTime>
+										<AttachDate r:priority="4" type="Boolean">False</AttachDate>
+										<FileFormatLocation relevance="False" r:priority="3" type="FileFormatLocation">Suffix</FileFormatLocation>
+										<AttachIncrement r:priority="4" type="Boolean">True</AttachIncrement>
+										<TimeFormat relevance="False" r:priority="5" type="TimeFormat">hh_mm_ss_24hr</TimeFormat>
+										<DateFormat relevance="False" r:priority="5" type="DateFormat">yyyy_Month_dd</DateFormat>
+										<IncrementNumber r:priority="5" type="Int32">0</IncrementNumber>
+										<IncrementMinimumDigits r:priority="5" type="Int32">3</IncrementMinimumDigits>
+										<SaveRawData relevance="False" r:priority="1" type="Boolean">False</SaveRawData>
+									</FileNameGeneration>
+									<OnlineProcessing>
+										<CrossSection>
+											<Enabled type="Boolean">False</Enabled>
+											<Direction relevance="False" type="CrossSectionDirection">Frame</Direction>
+											<Method relevance="False" type="CrossSectionMethod">Average</Method>
+											<FrameCrossSectionSize relevance="False" type="Int32">10</FrameCrossSectionSize>
+										</CrossSection>
+										<FrameCombination>
+											<FramesCombined r:priority="2" type="Int64">1</FramesCombined>
+											<Method relevance="False" r:priority="3" type="FrameCombinationMethod">Average</Method>
+										</FrameCombination>
+										<Formulas>
+											<Enabled type="Boolean">False</Enabled>
+											<CustomFormula r:priority="5" type="Formula" relevance="False">
+												<Formula count="0" />
+											</CustomFormula>
+										</Formulas>
+									</OnlineProcessing>
+									<OnlineCorrections>
+										<OrientationCorrection>
+											<Enabled r:priority="1" type="Boolean">False</Enabled>
+											<FlipHorizontally relevance="False" r:priority="2" type="Boolean">False</FlipHorizontally>
+											<FlipVertically relevance="False" r:priority="2" type="Boolean">False</FlipVertically>
+											<RotateClockwise relevance="False" r:priority="2" type="Int32">0</RotateClockwise>
+										</OrientationCorrection>
+										<BlemishCorrection>
+											<Enabled r:priority="3" type="Boolean">False</Enabled>
+											<DefinitionFile relevance="False" r:priority="4" type="String">D:\DATA\Lightfield\Correction Files\BlemishCorrection.CSV</DefinitionFile>
+										</BlemishCorrection>
+										<BackgroundCorrection>
+											<Enabled r:priority="3" type="Boolean">False</Enabled>
+											<ReferenceFile relevance="False" r:priority="4" type="String">D:\DATA\Lightfield\Correction files\BackgroundReference.spe</ReferenceFile>
+										</BackgroundCorrection>
+										<FlatfieldCorrection>
+											<Enabled r:priority="3" type="Boolean">False</Enabled>
+											<ReferenceFile relevance="False" r:priority="4" type="String">D:\DATA\Lightfield\Correction files\FlatfieldReference.spe</ReferenceFile>
+										</FlatfieldCorrection>
+										<CosmicRayCorrection>
+											<Enabled r:priority="3" type="Boolean">False</Enabled>
+											<Method relevance="False" r:priority="4" type="CosmicRayCorrectionMethod">MedianFilter</Method>
+											<KernelSize relevance="False" r:priority="5" type="Int32">5</KernelSize>
+										</CosmicRayCorrection>
+									</OnlineCorrections>
+									<OnlineExport>
+										<Enabled type="Boolean">False</Enabled>
+										<Format relevance="False" type="ExportFormat">Tiff</Format>
+										<CsvFormatOptions>
+											<DataLayout relevance="False" type="CsvDataLayout">Table</DataLayout>
+											<HeaderFormat relevance="False" type="CsvHeaderFormat">None</HeaderFormat>
+											<Matrix>
+												<IncludeFormatMarkers relevance="False" type="Boolean">True</IncludeFormatMarkers>
+												<MetadataColumns relevance="False" type="String" />
+												<XAxes relevance="False" type="String">Column,Wavelength</XAxes>
+												<YAxes relevance="False" type="String">Row</YAxes>
+											</Matrix>
+											<Table>
+												<Columns relevance="False" type="String">Region,Frame,Wavelength,Row,Column,Intensity</Columns>
+											</Table>
+											<Units>
+												<ExposureEndedTimeStamp relevance="False" type="TimeUnit">Microseconds</ExposureEndedTimeStamp>
+												<ExposureEndedTimeStampPrecision relevance="False" type="CsvNumericPrecision">Full</ExposureEndedTimeStampPrecision>
+												<ExposureStartedTimeStamp relevance="False" type="TimeUnit">Microseconds</ExposureStartedTimeStamp>
+												<ExposureStartedTimeStampPrecision relevance="False" type="CsvNumericPrecision">Full</ExposureStartedTimeStampPrecision>
+												<IntensityPrecision relevance="False" type="CsvNumericPrecision">Full</IntensityPrecision>
+												<Wavelength relevance="False" type="LightUnit">Nanometers</Wavelength>
+												<WavelengthLaserLine relevance="False" type="Double">532</WavelengthLaserLine>
+												<WavelengthPrecision relevance="False" type="CsvNumericPrecision">Full</WavelengthPrecision>
+											</Units>
+										</CsvFormatOptions>
+										<OriginFormatOptions>
+											<DataFormats relevance="False" type="OriginDataFormats">Matrix</DataFormats>
+										</OriginFormatOptions>
+										<IgorFormatOptions>
+											<DataFormats relevance="False" type="IgorDataFormats">Waves1D</DataFormats>
+										</IgorFormatOptions>
+										<FormatOptions>
+											<AlwaysAutoScale relevance="False" type="Boolean">False</AlwaysAutoScale>
+											<AutoScaleContrastMethod relevance="False" type="ExportAutoScaleContrastMethod">FullScale</AutoScaleContrastMethod>
+											<FrameRate relevance="False" type="Double">30</FrameRate>
+											<IncludeExperimentInformation relevance="False" type="Boolean">False</IncludeExperimentInformation>
+											<Axes>
+												<XAxis relevance="False" type="CalibrationType">Wavelength</XAxis>
+											</Axes>
+										</FormatOptions>
+										<OutputOptions>
+											<CustomDirectory relevance="False" type="String">D:\DATA\Lightfield</CustomDirectory>
+											<DataPartition relevance="False" type="ExportDataPartition">OneFilePerRegion</DataPartition>
+											<ExportedFilesOnly relevance="False" type="Boolean">False</ExportedFilesOnly>
+											<Location relevance="False" type="ExportLocation">ExperimentDataDirectory</Location>
+										</OutputOptions>
+									</OnlineExport>
+								</Experiment>
+							</Camera>
+						</Cameras>
+						<Spectrometers count="1">
+							<Spectrometer deviceID="1">
+								<Grating>
+									<Selected r:priority="1" type="String">[500nm,150][2][0]</Selected>
+									<CenterWavelength r:priority="2" type="Double">588.33940000000007</CenterWavelength>
+								</Grating>
+								<OpticalPort>
+									<Entrance>
+										<Selected r:readOnly="True" type="OpticalPortLocation">SideEntrance</Selected>
+									</Entrance>
+									<Exit>
+										<Selected r:readOnly="True" type="OpticalPortLocation">FrontExit</Selected>
+									</Exit>
+								</OpticalPort>
+								<CalibrationInformation>
+									<DetectorAngle r:readOnly="True" type="Double">0</DetectorAngle>
+									<FocalLength r:readOnly="True" type="Double">500</FocalLength>
+									<InclusionAngle r:readOnly="True" type="Double">17.200000000001133</InclusionAngle>
+								</CalibrationInformation>
+								<Experiment>
+									<WavelengthCalibration>
+										<Mode r:readOnly="True" type="CalibrationMode">Broadband</Mode>
+										<Error r:readOnly="True" type="Double">0.0366544861387901</Error>
+										<CalculatedCenterWavelength r:readOnly="True" type="NullableDouble" />
+										<LightSource type="CalibrationLightSource">PINeAr</LightSource>
+										<Date r:readOnly="True" type="DateTimeOffset">2021-03-22T18:09:32.9719631+01:00</Date>
+										<Orientation r:readOnly="True" type="ImageOrientation">Normal</Orientation>
+									</WavelengthCalibration>
+									<IntensityCalibration>
+										<Enabled type="Boolean">False</Enabled>
+										<Date r:readOnly="True" type="NullableDateTimeOffset" />
+										<Orientation r:readOnly="True" type="NullableImageOrientation" />
+										<Optimization type="IntensityCalibrationOptimization">Visible</Optimization>
+									</IntensityCalibration>
+									<StepAndGlue>
+										<Enabled r:priority="5" type="Boolean">False</Enabled>
+										<StartingCenterWavelength relevance="False" r:priority="5" type="Double">400</StartingCenterWavelength>
+										<EndingCenterWavelength relevance="False" r:priority="5" type="Double">800</EndingCenterWavelength
+										><CenterWavelengths relevance="False" r:priority="5" type="DoubleCollection" />
+									</StepAndGlue>
+								</Experiment>
+							</Spectrometer>
+						</Spectrometers>
+					</Devices>
+					<Environment>
+						<WorkingDirectory type="String">D:\DATA\Lightfield</WorkingDirectory>
+						<ScratchDirectory type="String">D:\DATA\Lightfield\Temp</ScratchDirectory>
+					</Environment>
+				</Experiment>
+			</Origin>
+		</DataHistory>
+	</DataHistories>
+	<GeneralInformation>
+		<FileInformation creator="GELB-PC\Blau" created="2022-04-13T15:46:19.0741421+02:00" lastModified="2022-04-13T15:46:19.0741421+02:00" />
+	</GeneralInformation>
+</SpeFormat>
