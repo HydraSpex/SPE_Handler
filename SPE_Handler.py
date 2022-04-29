@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import os
-import time
 
 #Reading Bytes
 def from_bytes(b, format, offset):
@@ -83,6 +82,7 @@ def openXMLline(filename):
     PosExpTimeEnd = XMLline.find("</ExposureTime>")
     ExpTimeData = XMLline[PosExpTime:PosExpTimeEnd]
     ExpTime = ExpTimeData[(ExpTimeData.find("\">")+2):]
+    ExpTime = int(float(ExpTime)/1000)
     
     PosCWL = XMLline.find("<CenterWavelength")
     PosCWLEnd = XMLline.find("</CenterWavelength>")
@@ -119,7 +119,7 @@ def convert_txt(filename, FolderName, space="tab", header=True, invert=False):
         Txt_Point.write("Frame width: " + str(Width) + "\n")
         Txt_Point.write("Frame height: " + str(Height) + "\n")
         Txt_Point.write("Number of frames: " + str(Frame) + "\n")
-        Txt_Point.write("Exposure (ms): " + str(ExpTime) + "\n")
+        Txt_Point.write("Exposure (s): " + str(ExpTime) + "\n")
         Txt_Point.write("Laser Wavelength (nm): " + str(Laser) + "\n")
         Txt_Point.write("Central Wavelength (nm): " + str(CWL) + "\n")
         Txt_Point.write("Date collected: " + str(Date) + "\n")
@@ -204,10 +204,7 @@ def getData(filename):
     Count = frame_width * frame_height
 
     if SPEVersion >= 3:
-        try:
-            Version, Frame, Width, Height, Laser, Date, Time, ExpTime, CWL, Grating, BG, Wavedata, WavedataRound = openXMLline(filename)
-        except:
-            pass
+        Version, Frame, Width, Height, Laser, Date, Time, ExpTime, CWL, Grating, BG, Wavedata, WavedataRound = openXMLline(filename)
     else:
         Version = SPEVersion
         Frame = num_frames
@@ -362,7 +359,10 @@ def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=Tr
     print("Filename:", FileName)
 
     #Create new Folder, if the File is converted or spectra are plotted
-    FolderName = time.strftime("Spectra_%Y-%m-%d_%H-%M-%S")
+    PosDot = FileName.find(".spe")
+    FolderName = FileName[:PosDot]
+    print(FolderName)
+
     try:
         os.makedirs(FolderName)
         print("Data folder created")
