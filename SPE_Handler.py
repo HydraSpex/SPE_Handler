@@ -107,10 +107,11 @@ def openXMLline(filename):
 #If space!="tab" the spacer between the values will be ";".
 #If header=False the TXT-File will not contain the important setup information.
 #If invert=True the TXT-File will be inverted.
-def convert_txt(filename, FolderName, space="tab", header=True, invert=False):
+def convert_txt(filename, FolderName,spe_file_name, space="tab", header=True, invert=False):
     print("Converting...")
-    File = FolderName + "/SpectraNew.txt"
+    File = FolderName +  f"/{spe_file_name}.txt"
     Txt_Point = open(File, "w") 
+    
 
     np_type, itemsize, Count, Version, Frame, Width, Height, Laser, Date, Time, ExpTime, CWL, Grating, BG, Wavedata, WavedataRound = getData(filename)
 
@@ -362,6 +363,9 @@ def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=Tr
     PosDot = FileName.find(".spe")
     FolderName = FileName[:PosDot]
     print(FolderName)
+    #find the Name of the spe File
+    PosSlash = FileName.rfind("/")
+    SpeFileName = FileName[PosSlash+1:PosDot]
 
     try:
         os.makedirs(FolderName)
@@ -376,6 +380,6 @@ def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=Tr
         spectralMap_integral(FileName, FolderName)
     
     if convert == True:
-        convert_txt(FileName, FolderName, space=space, header=header, invert=invert)
+        convert_txt(FileName, FolderName,SpeFileName, space=space, header=header, invert=invert)
 
     print("done")
