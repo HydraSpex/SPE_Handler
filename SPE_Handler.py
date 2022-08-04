@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import os
+import pandas as pd
 
 #Reading Bytes
 def from_bytes(b, format, offset):
@@ -355,19 +356,24 @@ def spectralMap_integral(filename, FolderName):
     file.close()
 
 
-def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=True, space="tab", header=True, invert=True):
+def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=True, space="tab", header=True, invert=True,referenzspektren=False):
+
     print("Filename:", FileName)
 
     #Create new Folder, if the File is converted or spectra are plotted
     PosDot = FileName.find(".spe")
     FolderName = FileName[:PosDot]
     print(FolderName)
-    #find the Name of the spe File
+    #find the name of the spe File
     PosSlash = FileName.rfind("/")
     SpeFileName = FileName[PosSlash+1:PosDot]
 
     try:
-        os.makedirs(FolderName)
+        if referenzspektren==True:
+            FolderName=f"{FileName[:PosSlash]}/txt-Files"
+            os.makedirs(FolderName)
+        else:
+            os.makedirs(FolderName)
         print("Data folder created")
     except:
         print("Data-Folder already exist")
@@ -380,5 +386,39 @@ def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=Tr
     
     if convert == True:
         convert_txt(FileName, FolderName,SpeFileName, space=space, header=header, invert=invert)
-
     print("done")
+    
+def multiple_spectra(FolderName):
+    """The function converts multiple .spe Files into one large .csv File. The columns are named after the individual Files
+
+    Args:
+        FolderName (str): Path to Folder, inside the Folder should be the .spe-Files and no other Files.
+    """
+    
+    #search the folder for files
+    spectra_files=[f for f in os.listdir(FolderName) if os.path.isfile(os.path.join(FolderName, f))]
+    print(f"In the folder are {len(spectra_files)} Files.")
+    
+    #convert the Files into FoldeName/txt-Files as single Files
+    for single_file in spectra_files:
+        spectra_from_spe((FolderName +"/"+ single_file),singleSpectra=False,header=True,referenzspektren=True)
+    
+    #collect the txt Files in a single File
+    spectra_txtfiles=[ f for f in os.listdir(FolderName +"/txt-Files") if os.path.isfile(os.path.join((FolderName +"/txt-Files"), f))]
+    data=np.loadtxt((FolderName +"/txt-Files/" + spectra_txtfiles[0]),comments=["#","Wavelength"])
+   
+    for single_file in spectra_txtfiles[1:]:
+        data_toadd=np.loadtxt((FolderName +"/txt-Files/" +single_file),comments=["#","Wavelength"])[:,1]
+        data=np.column_stack((data,data_toadd))
+    
+    #convert the data into a pd.DataFrame
+    columns=[f[:-4] for f in spectra_txtfiles]
+    columns.insert(0,"Wavelength")
+    data_pd=pd.DataFrame(data,columns=columns)
+    
+    #save the pd_DataFrame
+    PosSlash = FolderName.rfind("/")
+    path_to_save = FolderName[:PosSlash] + "/Referenzspektren_alle.csv"
+    data_pd.to_csv(path_to_save)
+    
+    print("Done")

@@ -24,6 +24,7 @@ The "spectra_from_spe" command requires only the filepath of your SPE-File as st
 - space="tab" -> Uses Tabs as spacers between the values in the converted TXT-File (other Option is ";")
 - header=True -> Activates the header with all the important settings for the TXT-File
 - invert=True -> inverts the TXT-File. If true the X-Values will be left and the single frames will be as columns, if false the frames will be in lines
+- name_stays=True -> TXT-File will be named after the original file, otherwise it will be named SpectraNew.txt
 
 All these settings are true by default.<br><br>
 
@@ -34,6 +35,10 @@ You can also use only the "convert_txt" command. It requires the filepath of you
 - invert=False -> inverts the TXT-File. If true the X-Values will be left and the single frames will be as columns, if false the frames will be in lines
 
 All these settings are true by default.<br><br>
+
+**"multiple_spectra"-Command**  
+The function converts multiple .spe Files into one large .csv File. The columns are named after the individual Files
+* FolderName (str): Path to Folder, inside the Folder should be the .spe-Files and no other Files.
 
 ## Extra
 In the repo you will find the "Test.py" Testfile and the "Testspectra" Folder with some Examples for Usage and Testing.
