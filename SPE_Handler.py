@@ -422,3 +422,76 @@ def multiple_spectra(FolderName):
     data_pd.to_csv(path_to_save)
     
     print("Done")
+    
+def rel_wavenumber(x,laser_wavelength):
+    x_wavenumber=1/(x*10**(-9))
+    laser_wavenumber=1/(laser_wavelength*10**(-9))
+    y=(laser_wavenumber-x_wavenumber)*10**(-2)
+    return y 
+
+
+def read_infos(path):
+    """Read the Information on the first lines of the txt File. 
+
+    Args:
+        path (str): Path to txt File
+
+    Returns:
+        dict: dict with the data i.e. 'SPE version': 3.0 <- is float if possible
+    """
+    
+    with open(path) as file:
+        lines=file.readlines(800)[:20]
+    
+    #nur die Zeilen mit relevanten Infos
+    info_lines=[x for x in lines if x[0]=="#"]
+    data_messung={}
+    #remove # and /n
+    for line in info_lines:
+        if "#" == line[0]:
+            clean_line=line[1:]
+        if "/n" == clean_line[-1:]:
+            clean_line=line[:-1]
+        clean_line=clean_line.split(":")
+        try:
+            clean_line[1]=float(clean_line[1])
+        except:
+            pass
+        data_messung[clean_line[0]]=clean_line[1]
+    
+    return data_messung
+
+def convert_txtnpy(path):
+    """Convert a given txt File in two npy Array: data.npy for the measured value (3D-Array with x,y spatial + z spectral dimension) + wellenlaenge.npy (x-ticks of the spectra in relative wavenumbers) 
+    Args:
+        path (str): Speicherordner des SpectraNew.txt Files
+    """
+    data=np.loadtxt(fname=path,comments=["#","Wavelength"])
+    info_messung=read_infos(path)
+
+    #wellenlänge in neuen Array laden
+    wellenlaenge=data[:,0]
+    laser_wavelength=info_messung["Laser Wavelength (nm)"]
+    wellenlaenge=rel_wavenumber(wellenlaenge,laser_wavelength)
+
+    #entfernen der Wellenlängenspalte
+    data=data[:,1:]
+
+    # Transponieren
+    data=data.T
+
+    #Reshapen inkl. find map size x,y
+    x= int(np.sqrt(data.shape[0]))
+    y=x
+    data=data.reshape((x,y,wellenlaenge.shape[0]))
+    
+    
+    #als .npy speichern
+    path_directory=os.path.dirname(os.path.dirname(path))
+    np.save(f"{path_directory}/data.npy",data)
+    np.save(f"{path_directory}/wellenlaenge.npy",wellenlaenge)
+    
+    print(f"Gespeichert als {data.shape} Array")
+    print(f"Im Ordner {path_directory}")
+    print()
+    return 
