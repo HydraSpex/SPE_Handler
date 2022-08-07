@@ -387,42 +387,8 @@ def spectra_from_spe(FileName, spectralMap=False, singleSpectra=True, convert=Tr
     if convert == True:
         convert_txt(FileName, FolderName,SpeFileName, space=space, header=header, invert=invert)
     print("done")
-    
-def multiple_spectra(FolderName):
-    """The function converts multiple .spe Files into one large .csv File. The columns are named after the individual Files
+    return 
 
-    Args:
-        FolderName (str): Path to Folder, inside the Folder should be the .spe-Files and no other Files.
-    """
-    
-    #search the folder for files
-    spectra_files=[f for f in os.listdir(FolderName) if os.path.isfile(os.path.join(FolderName, f))]
-    print(f"In the folder are {len(spectra_files)} Files.")
-    
-    #convert the Files into FoldeName/txt-Files as single Files
-    for single_file in spectra_files:
-        spectra_from_spe((FolderName +"/"+ single_file),singleSpectra=False,header=True,referenzspektren=True)
-    
-    #collect the txt Files in a single File
-    spectra_txtfiles=[ f for f in os.listdir(FolderName +"/txt-Files") if os.path.isfile(os.path.join((FolderName +"/txt-Files"), f))]
-    data=np.loadtxt((FolderName +"/txt-Files/" + spectra_txtfiles[0]),comments=["#","Wavelength"])
-   
-    for single_file in spectra_txtfiles[1:]:
-        data_toadd=np.loadtxt((FolderName +"/txt-Files/" +single_file),comments=["#","Wavelength"])[:,1]
-        data=np.column_stack((data,data_toadd))
-    
-    #convert the data into a pd.DataFrame
-    columns=[f[:-4] for f in spectra_txtfiles]
-    columns.insert(0,"Wavelength")
-    data_pd=pd.DataFrame(data,columns=columns)
-    
-    #save the pd_DataFrame
-    PosSlash = FolderName.rfind("/")
-    path_to_save = FolderName[:PosSlash] + "/Referenzspektren_alle.csv"
-    data_pd.to_csv(path_to_save)
-    
-    print("Done")
-    
 def rel_wavenumber(x,laser_wavelength):
     x_wavenumber=1/(x*10**(-9))
     laser_wavenumber=1/(laser_wavelength*10**(-9))
@@ -437,7 +403,7 @@ def read_infos(path):
         path (str): Path to txt File
 
     Returns:
-        dict: dict with the data i.e. 'SPE version': 3.0 <- is float if possible
+        dict: dict with the data i.e. 'SPE version': 3.0 <- as float if possible
     """
     
     with open(path) as file:
@@ -460,6 +426,52 @@ def read_infos(path):
         data_messung[clean_line[0]]=clean_line[1]
     
     return data_messung
+
+  
+def multiple_spectra(FolderName):
+    """The function converts multiple .spe Files into one large .csv File. The columns are named after the individual Files.  
+    The index of the .csv-FIle/Dataframe are the x-ticks in relative Wavenumbers.
+    
+    Args:
+        FolderName (str): Path to Folder, inside the Folder should be the .spe-Files and no other Files.
+    """
+    
+    #search the folder for files
+    spectra_files=[f for f in os.listdir(FolderName) if os.path.isfile(os.path.join(FolderName, f))]
+    print(f"In the folder are {len(spectra_files)} Files.")
+    
+
+    
+    #convert the Files into FoldeName/txt-Files as single Files
+    for single_file in spectra_files:
+        spectra_from_spe((FolderName +"/"+ single_file),singleSpectra=False,header=True,referenzspektren=True)
+    
+    #collect the txt Files in a single File
+    spectra_txtfiles=[ f for f in os.listdir(FolderName +"/txt-Files") if os.path.isfile(os.path.join((FolderName +"/txt-Files"), f))]
+    data=np.loadtxt((FolderName +"/txt-Files/" + spectra_txtfiles[0]),comments=["#","Wavelength"])
+   
+    # get info from the first file
+    infos_first_file=read_infos(FolderName +"/txt-Files/"+ spectra_txtfiles[0])
+    
+    for single_file in spectra_txtfiles[1:]:
+        data_toadd=np.loadtxt((FolderName +"/txt-Files/" +single_file),comments=["#","Wavelength"])[:,1]
+        data=np.column_stack((data,data_toadd))
+    
+    #convert the data into a pd.DataFrame
+    columns=[f[:-4] for f in spectra_txtfiles]
+    data_pd=pd.DataFrame(data[:,1:],index=rel_wavenumber(data[:,0],laser_wavelength=infos_first_file["Laser Wavelength (nm)"]),columns=columns)
+    
+    #save the pd_DataFrame
+    PosSlash = FolderName.rfind("/")
+    path_to_save = FolderName[:PosSlash] + "/Referenzspektren_alle.csv"
+    data_pd.to_csv(path_to_save)
+    
+    print("Done")
+    
+
+
+
+
 
 def convert_txtnpy(path):
     """Convert a given txt File in two npy Array: data.npy for the measured value (3D-Array with x,y spatial + z spectral dimension) + wellenlaenge.npy (x-ticks of the spectra in relative wavenumbers) 
