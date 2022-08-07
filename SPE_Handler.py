@@ -460,6 +460,7 @@ def multiple_spectra(FolderName):
     #convert the data into a pd.DataFrame
     columns=[f[:-4] for f in spectra_txtfiles]
     data_pd=pd.DataFrame(data[:,1:],index=rel_wavenumber(data[:,0],laser_wavelength=infos_first_file["Laser Wavelength (nm)"]),columns=columns)
+    data_pd.index.name="rel. Wavenumber (cm^-1)"
     
     #save the pd_DataFrame
     PosSlash = FolderName.rfind("/")
