@@ -474,7 +474,7 @@ def multiple_spectra(FolderName):
 
 
 
-def convert_txtnpy(path):
+def convert_txtnpy(path,in_gui=False):
     """Convert a given txt File in two npy Array: data.npy for the measured value (3D-Array with x,y spatial + z spectral dimension) + wellenlaenge.npy (x-ticks of the spectra in relative wavenumbers) 
     Args:
         path (str): Speicherordner des SpectraNew.txt Files
@@ -500,11 +500,14 @@ def convert_txtnpy(path):
     
     
     #als .npy speichern
-    path_directory=os.path.dirname(os.path.dirname(path))
-    np.save(f"{path_directory}/data.npy",data)
-    np.save(f"{path_directory}/wellenlaenge.npy",wellenlaenge)
-    
-    print(f"Gespeichert als {data.shape} Array")
-    print(f"Im Ordner {path_directory}")
-    print()
-    return 
+    if in_gui==False:
+        path_directory=os.path.dirname(os.path.dirname(path))
+        np.save(f"{path_directory}/data.npy",data)
+        np.save(f"{path_directory}/wellenlaenge.npy",wellenlaenge)
+        
+        print(f"Gespeichert als {data.shape} Array")
+        print(f"Im Ordner {path_directory}")
+        print()
+        return 
+    else:
+        return data,wellenlaenge
